@@ -102,6 +102,91 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    // log button
+    errorBtns[0].addEventListener("click", function() {
+      console.log('Logged');
+    });
+
+    // error button
+    errorBtns[1].addEventListener("click", function() {
+      console.error('Error');
+    });
+
+    // count button
+    errorBtns[2].addEventListener("click", function() {
+      console.count('Count');
+    });
+
+    // warn button
+    errorBtns[3].addEventListener("click", function() {
+      console.warn('Warning');
+    });
+
+    // assert button
+    errorBtns[4].addEventListener("click", function() {
+      const a = 1;
+      const b = 2;
+      const errorMsg = 'a is not larger than b'
+      console.assert(a == b, {a, b, errorMsg});
+    });
+
+    // clear button
+    errorBtns[5].addEventListener("click", function() {
+      console.clear();
+    });
+
+    // dir button
+    errorBtns[6].addEventListener("click", function() {
+      console.dir(document);
+    });
+
+    // dirxml button
+    errorBtns[7].addEventListener("click", function() {
+      console.dirxml(document);
+    });
+
+    // group button
+    errorBtns[8].addEventListener("click", function() {
+      console.group();
+    });
+
+    // end group button
+    errorBtns[9].addEventListener("click", function() {
+      console.groupEnd();
+    });
+
+
+    // table button
+    errorBtns[10].addEventListener("click", function() {
+      const table = [
+        ["Will", "Smith"],
+        ["Kendrick", "Lamar"],
+        ["Hieu", "Pham"],
+      ]
+      console.table(table);
+    });
+
+    // time start button
+    errorBtns[11].addEventListener("click", function() {
+      console.time("Time");
+    });
+
+
+    // time end button
+    errorBtns[12].addEventListener("click", function() {
+      console.timeEnd("Time");
+    });
+
+    // trace button
+    errorBtns[13].addEventListener("click", function() {
+      console.trace();
+    });
+
+    // golbal error button
+    errorBtns[14].addEventListener("click", function() {
+      throw error;
+    });
   </script>
 </body>
 
