@@ -87,7 +87,13 @@
     </section>
   </main>
 
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
+    window.TrackJS && TrackJS.install({ 
+      token: "98f551272f574c86b9ec2c5165edffd7"
+      
+    });
+
     let form = document.querySelector('form');
     form.addEventListener('submit', e => {
       e.preventDefault();
@@ -185,8 +191,28 @@
 
     // golbal error button
     errorBtns[14].addEventListener("click", function() {
-      throw error;
+      bruh();
     });
+
+    class ButtonError extends Error {
+      constructor(message) {
+        super(message);
+        this.name = "ButtonError";
+      }
+    }
+
+    try {
+      // error will occur because there are only 15 buttons
+      errorBtns[15].addEventListener("click", function() {
+        console.trace();
+      });
+    } catch (error) {
+      console.log("error");
+      throw new ButtonError("button 16 isn't defined");
+    } finally  {
+      console.log("finally");
+    }
+
   </script>
 </body>
 
